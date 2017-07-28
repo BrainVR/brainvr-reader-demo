@@ -1,9 +1,9 @@
 #give me folder
 source("R/Loading.R")
 
-data_dir = "../Data"
+data_dir = "Examples/Data"
 
-Analysis = UnityAnalysis$new(data_dir, "ek0117")
+Analysis = UnityAnalysis$new(data_dir, "NEO-18-23-27-27-07-2017")
 Analysis$TestResults()
 Analysis$TrialInfo(10)
 

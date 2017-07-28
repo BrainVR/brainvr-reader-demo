@@ -1,0 +1,62 @@
+***SESSION HEADER***
+{
+  "Participant": "NEO",
+  "Timestamp": "18-23-27-27-07-2017"
+}
+---SESSION HEADER---
+***TEST HEADER***
+***EXPERIMENT SETTINGS***
+{
+  "GoalSize": 5.0,
+  "GoalOrder": [
+    1,
+    2,
+    3
+  ],
+  "RotationSpeed": 5.0,
+  "GoalColours": [
+    "#8b0000",
+    "#ffd700",
+    "#105955",
+    "#104e8b"
+  ],
+  "TrainingLength": 4,
+  "GoalRadius": 15.0,
+  "PointAtFirst": true,
+  "GoToGoal": true,
+  "AcceptedPointingError": 20.0,
+  "Messages": {
+    "Point": "Ukažte na cíl",
+    "PointWrong": "Ukázali jste nepresne",
+    "GoToGoal": "Dojdete do cíle",
+    "NewTrial": "Nový úkol mužete zacít ze stredu",
+    "Closed Experiment": "Dekujeme za absolvování experimentu"
+  }
+}
+---EXPERIMENT SETTINGS---
+***POSITIONS***
+{
+  "GoalPositions": [
+    "(22.0, 0.8, 0.0)",
+    "(-11.0, 0.8, 19.0)",
+    "(-22.0, 0.8, 0.0)",
+    "(11.0, 0.7, 19.0)"
+  ]
+}
+---POSITIONS---
+
+---TEST HEADER---
+Time;Sender;Index;Event;
+66207.9069;Experiment;0;WaitingToStart;
+66207.9069;Experiment;0;Started;
+66207.9069;Trial;0;WaitingToStart;
+66212.6051;Trial;0;Running;
+66444.0516;Experiment;0;ForceFinished;
+66444.0521;Trial;0;ForceFinished;
+66444.0521;Trial;0;Finished;
+66444.0521;Trial;0;Closed;
+66444.0521;Trial;1;WaitingToStart;
+66444.0521;Trial;1;Running;
+66444.0521;Trial;1;Closed;
+66444.0521;Experiment;0;Finished;
+66444.0587;Experiment;0;Closed;
