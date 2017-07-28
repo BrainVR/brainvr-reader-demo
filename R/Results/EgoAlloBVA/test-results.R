@@ -1,4 +1,4 @@
-test_results = function(test, dt_player){
+egoallobva_test_results = function(test, dt_player){
   ls = list()
   i_finished_trials = get_trial_event_indices(test, "Finished")
   n_finished_trials = length(i_finished_trials)

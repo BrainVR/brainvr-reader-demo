@@ -1,4 +1,4 @@
-library(svgR)
+#library(svgR)
 svg_print_trial_image = function(dt_position, test, trialID){
   SIZE = c(400, 400)
   transform = list(translate = c(SIZE/2), scale = c(3, 3))

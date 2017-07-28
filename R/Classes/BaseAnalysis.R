@@ -1,24 +1,24 @@
 BaseAnalysis <- R6Class("BaseAnalysis",
   #define variables
   public = list(
-  #basic definitions
-  participant = NULL,
-  dataDirectory = NULL,
-  tests = NULL,
-  initialize = function(dir, id){
-    private$dataDirectory(dir,id)
-    self$SetParticipant(id)
-    #TODO - check the data
-    if(nargs() >= 2) {
-     self$ReadData()
+    #basic definitions
+    participant = NULL,
+    dataDirectory = NULL,
+    tests = NULL,
+    initialize = function(dir, id){
+      private$dataDirectory(dir,id)
+      self$SetParticipant(id)
+      #TODO - check the data
+      if(nargs() >= 2) {
+       self$ReadData()
+      }
+    },
+    SetParticipant = function(string){
+      self$participant = string
+    },
+    ReadData = function(override = F){
+      private$readData(override)
     }
-  },
-  SetParticipant = function(string){
-    self$participant = string
-  },
-  ReadData = function(override = F){
-    private$readData(override)
-  }
   ),
   private = list(
     rootDataDirectory = NULL,
@@ -28,8 +28,6 @@ BaseAnalysis <- R6Class("BaseAnalysis",
       self$dataDirectory = paste(directory,id,sep="/")
       return(self$dataDirectory)
     },
-    readData = function(){
-      
-    }
+    readData = function(){} #usually overriden
   )
 )

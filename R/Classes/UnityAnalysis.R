@@ -32,15 +32,13 @@ UnityAnalysis <- R6Class("UnityAnalysis",
       ls = trial_info(test, trialID, self$playerLog)
       return(ls)
     },
-    TestResults = function(force = F){
-      if (!is.null(private$testTable) & !force) return(private$testTable)
-      ls = list() 
-      test = self$tests[[1]]
-      df_test = test_results(test, self$playerLog)
-      return(df_test)
-    },
-    ExportSynchropulses = function(i_test = 1, event_name = "ArduinoPulseStart"){
-      export_pulses(self$tests[[i_test]]$data, event_name, id = self$participant)
+    # returns only results from a first test, even if there were multiple
+    TestResults = function(force = F, i_test = 1){
+      if (!is.null(private$resultsTable) & !force) return(private$resultsTable)
+      ls = list()
+      test = self$tests[[i_test]]
+      private$resultsTable = test_results(test, self$playerLog)
+      return(private$resultsTable)
     },
     ExportPlayerLog = function(path = getwd()){
       export_player_log(self$playerLog, self$participant, path = path)
@@ -53,7 +51,7 @@ UnityAnalysis <- R6Class("UnityAnalysis",
   ),
   private = list(
     #fields
-    testTable = NULL,
+    resultsTable = NULL,
     isValid = function(){
       return(TRUE)
     },
