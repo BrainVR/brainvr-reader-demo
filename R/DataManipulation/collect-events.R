@@ -24,5 +24,5 @@ collect_events <- function(test, dt_player){
     pointingError <- c(pointingError, angle_difference(pointing$target, pointing$chosen))
     type <- c(type, get_trial_type(test, trialID))
   }
-  df = data.frame(trialIDs, trialSetup, trialStarted, trialEnded, pointingStarted, pointingEnded, pointingError, synchropulse, type)
+  df <- data.frame(trialIDs, trialSetup, trialStarted, trialEnded, pointingStarted, pointingEnded, pointingError, synchropulse, type)
 }
