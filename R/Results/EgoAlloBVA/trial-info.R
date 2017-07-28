@@ -1,4 +1,4 @@
-trial_info = function(test, trialID, dt_player){
+egoallobva_trial_info = function(test, trialID, dt_player){
   ls <- list()
   times <- get_trial_timewindow(test, trialID)
   ls$duration <- times$finish - times$start
