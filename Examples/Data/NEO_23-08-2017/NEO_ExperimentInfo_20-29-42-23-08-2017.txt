@@ -1,7 +1,7 @@
 ***SESSION HEADER***
 {
   "Participant": "NEO",
-  "Timestamp": "18-23-27-27-07-2017"
+  "Timestamp": "20-29-42-23-08-2017"
 }
 ---SESSION HEADER---
 ***EXPERIMENT INFO***
@@ -14,8 +14,8 @@
     "FacClipPlane": 1000.0
   },
   "ScreenInfo": {
-    "Height": 1080.0,
-    "Width": 1920.0
+    "Height": 638.0,
+    "Width": 1147.0
   },
   "LevelName": "BVA"
 }
