@@ -1,3 +1,6 @@
+#' preprocesses player log and returns if it changed
+#' @param player_log 
+
 preprocess_player_log = function(player_log){
   changed = F
   if (!is_column_present(player_log, "Position.x")){
