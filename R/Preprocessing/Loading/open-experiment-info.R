@@ -1,3 +1,6 @@
+#' Searches the directory for experiment log files. Returs single one if multiple are found
+#' @param directory path to the directory where to search
+#' @return list with a single loaded info log
 open_experiment_info = function(directory = ""){
   ls = list()
   logs = list.files(directory, pattern = "_ExperimentInfo_", full.names = T)
@@ -6,7 +9,7 @@ open_experiment_info = function(directory = ""){
     return(NULL)
   }
   for(i in 1:length(logs)){
-    ls[[i]] = open_experiment_log(logs[i])
+    ls[[i]] = load_experiment_info(logs[i])
     ls[[i]]$filename = logs[i]
   }
   if (length(ls) == 1){

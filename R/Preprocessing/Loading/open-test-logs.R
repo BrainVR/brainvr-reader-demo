@@ -1,4 +1,5 @@
-# Iterates over all _test_ files in a folder asnd saves them one by one to a return list
+#' Iterates over all _test_ files in a folder asnd saves them one by one to a return list
+
 open_test_logs = function(directory){
   ls = list()
   logs = list.files(directory, pattern = "_test_", full.names = T)
