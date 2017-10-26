@@ -8,4 +8,5 @@ UnityObject <- function(){
   obj$data$player_log <- NA
   obj$data$experiment_log <- NA
   obj$data$results_log <- NA
+  return(obj)
 }
