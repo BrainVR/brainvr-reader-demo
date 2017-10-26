@@ -8,7 +8,7 @@ open_player_log = function(directory, override = F){
   log_columns_types = c(Time = "numeric", Position = "numeric", Rotation.X = "numeric", 
                         Rotation.Y = "numeric", FPS = "numeric", Input = "character")
   preprocessed_log_column_types = c(log_columns_types, Position.x = "numeric", Position.y = "numeric", Position.z = "numeric", 
-                                    distance = "numeric", cumulative_distance = "numeric", angle_diff = "numeric")
+                                    distance = "numeric", cumulative_distance = "numeric", angle_diff_x = "numeric")
   if (length(logs) > 1){
     #check if there is a preprocessed player file
     preprocessed_index = grep("*_preprocessed", logs)
