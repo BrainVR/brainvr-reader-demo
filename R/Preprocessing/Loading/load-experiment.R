@@ -19,14 +19,12 @@ load_experiment <- function(folder, obj = NULL){
   #preprocesses player log
   #checks if there is everything we need and if not, recomputes the stuff
   
-  testLogs = open_experiment_logs(folder)
-  for (i in length(testLogs)){
-    self$tests[[i]] = testLogs[[i]]
-  }
+  test_logs = open_experiment_logs(folder)
   
   if(is.null(obj)) obj = UnityObject()
   obj$data$experiment_info <- experiment_info
   obj$data$player_log <- player_log
-  obj$data$experiment_log <- test_log
-  obj$data$results_log <- results_log
+  obj$data$experiment_log <- test_logs
+  #obj$data$results_log <- results_log
+  return (obj)
 }

@@ -1,6 +1,7 @@
-#' preprocesses player log and returns if it changed
+#' preprocesses player log and returns if it changed. Passes by referennce
 #' @param player_log 
 
+## TODO - change so that the log is not passed by reference
 preprocess_player_log = function(player_log){
   changed = F
   if (!is_column_present(player_log, "Position.x")){

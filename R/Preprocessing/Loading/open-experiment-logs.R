@@ -10,7 +10,7 @@ open_experiment_logs = function(directory){
   }
   for(i in 1: length(logs)){
     log = logs[i]
-    ls[[i]] = open_test_log(log)
+    ls[[i]] = load_experiment_log(log)
   }
   return(ls)
 }
