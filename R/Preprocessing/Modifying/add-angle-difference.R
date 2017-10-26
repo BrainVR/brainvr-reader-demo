@@ -5,11 +5,11 @@
 #' add_angle_difference(player_log, "Y")
 #' 
 add_angle_difference = function(player_log, axis = "x"){
-  rotation_col_name <- paste("Rotation.", toupper(axis), sep = "")
-  new_col_name <- paste("angle_diff_", axis, sep = "")
+  rotation_col_name <- paste0("Rotation.", str_to_title(axis))
+  new_col_name <- paste0("angle_diff_", axis)
   
   axis_angles <- player_log[[rotation_col_name]]
-  if(axis_angles) {
+  if(is.null(axis_angles)){
     smart_print(c("There isn't a rotation column of name", rotation_col_name))
     return()
   }

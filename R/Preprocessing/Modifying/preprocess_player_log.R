@@ -20,28 +20,45 @@ preprocess_player_log = function(player_log, type = "rigidbody"){
     playerLog <- add_distance_moved (player_log)
     changed <- T
   }
-  if(type == "rigidbody"){
-    type_changed <- rigidbody_preprocess
-    changed <- changed || type_changed
-  }  
-  if(type == "Virtualizer"){
-    type_changed <- virtualizer_preprocess
-    changed <- changed || type_changed
+  ## Adds rotation difference
+  if (!is_column_present(player_log, "angle_diff_x")){
+    player_log <- add_angle_difference(player_log, "x")
+    changed <- T
   }
-  
+  if(type == "rigidbody"){
+    changed <- rigidbody_preprocess(player_log, changed)
+  }
+  if(type == "virtualizer"){
+    changed <- virtualizer_preprocess(player_log, changed)
+  }
   if (changed) print("Log modified") else print("Log ok")
   return(changed) 
 }
 
-rigidbody_preprocess <- function(player_log){
-  if (!is_column_present(player_log, "angle_diff")){
-    player_log <- add_angle_difference(player_log)
-    changed <- T
-  }
+rigidbody_preprocess <- function(player_log, changed){
   return(changed)
 }
 
-virtualizer_preprocess <- function(player_log){
+virtualizer_preprocess <- function(player_log, changed){
+  changed = F
   ## Adding angle differences
-
+  if (!is_column_present(player_log, "angle_diff_y")){
+    player_log <- add_angle_difference(player_log, "y")
+    changed <- T
+  }
+  ## Adding angle differences
+  if (!is_column_present(player_log, "angle_diff_virtualizer")){
+    player_log <- add_angle_difference(player_log, "virtualizer")
+    changed <- T
+  }
+  if (!is_column_present(player_log, "angle_diff_cotroller.x")){
+    player_log <- add_angle_difference(player_log, "controller.x")
+    changed <- T
+  }
+  if (!is_column_present(player_log, "angle_diff_controller.y")){
+    player_log <- add_angle_difference(player_log, "controller.y")
+    changed <- T
+  }
+  return(changed)
+  
 }
