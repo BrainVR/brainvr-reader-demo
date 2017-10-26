@@ -1,4 +1,8 @@
-open_test_log = function(filepath){
+#' Loads expeirment log into a predefined list
+#' @param filepath path tot he expeirment log
+#' @return list with loaded settings files and data
+#' 
+load_experiment_log = function(filepath){
   ls = list()
   #reads into a text file at first
   

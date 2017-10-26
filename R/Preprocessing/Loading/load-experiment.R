@@ -1,5 +1,6 @@
 #' Loads files form a folder into UnityObject
 #' @param folder path to the folder respective to the working directory
+#' @param obj created UnityObject to fill in data. If none passed, new one gets created
 #' @returns UnityObject object
 #' @example 
 #' 
@@ -18,10 +19,11 @@ load_experiment <- function(folder, obj = NULL){
   #preprocesses player log
   #checks if there is everything we need and if not, recomputes the stuff
   
-  testLogs = open_test_logs(folder)
+  testLogs = open_experiment_logs(folder)
   for (i in length(testLogs)){
     self$tests[[i]] = testLogs[[i]]
   }
+  
   if(is.null(obj)) obj = UnityObject()
   obj$data$experiment_info <- experiment_info
   obj$data$player_log <- player_log
