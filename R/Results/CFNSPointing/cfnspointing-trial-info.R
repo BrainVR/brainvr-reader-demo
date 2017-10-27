@@ -1,9 +1,7 @@
-egoallobva_trial_info = function(test, dt_player, trialID){
+cfnspointing_trial_info = function(test, dt_player, trialID){
   ls <- list()
   times <- get_trial_timewindow(test, trialID)
   ls$duration <- times$finish - times$start
-  ls$distances <- get_trial_distance(dt_player, times, test = test, trialID = trialID)
-  ls$point <- get_trial_pointing(dt_player, test = test, trialID = trialID)
-  ls$type <- get_trial_type(test, trialID)
+  ls$distances <- get_walked_distnace_timewindow(dt_player, times)
   return(ls)
 }
