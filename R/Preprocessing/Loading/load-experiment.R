@@ -24,7 +24,8 @@ load_experiment <- function(folder, obj = NULL){
   if(is.null(obj)) obj = UnityObject()
   obj$data$experiment_info <- experiment_info
   obj$data$player_log <- player_log
-  obj$data$experiment_log <- test_logs
+  ##TODO - redo this part
+  obj$data$experiment_log <- test_logs[[1]]
   #obj$data$results_log <- results_log
   return (obj)
 }

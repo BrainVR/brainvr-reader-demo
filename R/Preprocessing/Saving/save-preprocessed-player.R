@@ -18,6 +18,6 @@ save_preprocessed_player = function(directory, player_log, orig_filename = NULL)
     preprocessed_filename <- gsub(".txt","_preprocessed.txt", filename)
   }
   smart_print(c("Saving processed player log as", preprocessed_filename))
-  write.table(player_log, preprocessed_filename, sep = ";", dec = ".", 
-              quote = F, row.names = F)
+  write.table(player_log, preprocessed_filename, sep = ";", 
+              dec = ".", quote = F, row.names = F)
 }
