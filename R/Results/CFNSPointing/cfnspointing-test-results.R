@@ -1,18 +1,14 @@
-cfnspointing_test_results = function(df_experiment, dt_player){
+cfnspointing.test_results = function(df_experiment, dt_player){
   ls = list()
   i_finished_trials = get_trial_event_indices(df_experiment, "Finished")
   n_finished_trials = length(i_finished_trials)
-  df = data.frame(duration = rep(NA, n_finished_trials), 
-                  distances.walkedDistance = rep(NA, n_finished_trials), 
-                  distances.goalStart = rep(NA, n_finished_trials), 
-                  point.time = rep(NA, n_finished_trials),
-                  point.chosen = rep(NA, n_finished_trials),
-                  point.target = rep(NA, n_finished_trials),
-                  type = rep("", n_finished_trials),
-                  index = rep(NA, n_finished_trials), 
-                  stringsAsFactors = FALSE)
+  column_names <- c("duration","distances.walkedDistance", "iTrial")
+  column_types <- c(rep("numeric", 3))
+  
+  df <- create_results_df(column_names, column_types, n_finished_trials)
+  
   for (n in i_finished_trials){
-    ls = cfnspointing_trial_info(df_experiment, dt_player, n)
+    ls = cfnspointing.trial_info(df_experiment, dt_player, n)
     ls$index = n
     df[n, ] = unlist(ls, recursive = F)
   }

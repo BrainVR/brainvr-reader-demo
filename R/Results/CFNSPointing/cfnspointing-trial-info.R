@@ -1,4 +1,4 @@
-cfnspointing_trial_info = function(test, dt_player, trialID){
+cfnspointing.trial_info = function(test, dt_player, trialID){
   ls <- list()
   times <- get_trial_timewindow(test, trialID)
   ls$duration <- times$finish - times$start
