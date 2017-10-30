@@ -7,7 +7,7 @@ egoallobbva.get_trial_distance <- function(dt_position, timeWindow = NULL, test 
     ls$walkedDistance <- get_walked_distnace_timewindow(dt_position, timeWindow)
   }
   if(!(is.null(test) || is.null(trialID))){
-    goalIndex <- get_goal_index(test, trialID)
+    goalIndex <- egoallobva.get_goal_index(test, trialID)
     goalPosition <- GoalPosition(test, goalIndex)
     startIndex <- StartIndex(test, trialID)
     startPosition <- StartPosition(test, startIndex)
