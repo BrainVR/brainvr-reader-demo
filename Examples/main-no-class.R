@@ -7,4 +7,4 @@ obj <- load_experiment(dir, obj)
 changed <- preprocess_player_log(obj$data$player_log)
 if(changed) save_preprocessed_player(dir, obj$data$player_log)
 
-cfnspointing.test_results(obj$data$experiment_log, obj$data$player_log)
+cfnslearning.test_results(obj$data$experiment_log, obj$data$player_log)
