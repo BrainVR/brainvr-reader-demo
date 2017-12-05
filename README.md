@@ -1,1 +1,1 @@
-unity-logger-reader
+Demo for the brainvr-reader R package
